@@ -186,7 +186,8 @@ Citizen.CreateThread(function()
             NetworkSetFriendlyFireOption(false)
 			ClearPlayerWantedLevel(PlayerId())
 		else
-			local player = PlayerPedId()
+			local player = PlayerId()
+			local playerPed = PlayerPedId()
             
             DisablePlayerFiring(player,false)
 			SetPlayerInvincible(player, false)
