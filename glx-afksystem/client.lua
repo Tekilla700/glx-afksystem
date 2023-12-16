@@ -182,15 +182,14 @@ Citizen.CreateThread(function()
 			
 			DisablePlayerFiring(player,true)
             FreezeEntityPosition(PlayerPedId(), true)
-			SetPlayerInvincible(player, true)
+			--SetPlayerInvincible(player, true)
             NetworkSetFriendlyFireOption(false)
 			ClearPlayerWantedLevel(PlayerId())
 		else
 			local player = PlayerId()
-			local playerPed = PlayerPedId()
             
             DisablePlayerFiring(player,false)
-			SetPlayerInvincible(player, false)
+			--SetPlayerInvincible(player, false)
             NetworkSetFriendlyFireOption(true)
 
 		end
