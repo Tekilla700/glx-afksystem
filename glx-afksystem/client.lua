@@ -79,7 +79,6 @@ function TeleportBackToInitialLocation()
         isAFK = false
         inAFKLocation = false
         originalLocation = nil 
-        TriggerEvent('cd_drawtextui:HideUI')
     end
 end
 
@@ -146,7 +145,7 @@ CreateThread(function()
 
                                     TeleportPlayerToLocation(randomAfkLocation.x, randomAfkLocation.y, randomAfkLocation.z)
                                     showAfkText = true  
-                                    
+                                    TriggerServerEvent('playerWentAFK')
                                     SetCamCoord(AFKcamera, Config.AFKCameraCoords.x, Config.AFKCameraCoords.y, Config.AFKCameraCoords.z)
                                     SetCamRot(AFKcamera, Config.AFKCameraRotation.x, Config.AFKCameraRotation.y, Config.AFKCameraRotation.z)
                                     RenderScriptCams(true, false, 0, true, true)
@@ -245,6 +244,7 @@ RegisterCommand("goafk", function()
             PlayRandomAnimation() 
             isAFK = true
             inAFKLocation = true
+            TriggerServerEvent('playerWentAFK')
         end
     end    
 end)
